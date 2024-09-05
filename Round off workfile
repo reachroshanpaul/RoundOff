@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round to Nearest 250</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Round to Nearest 250</h1>
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <button onclick="performRounding()">Round</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function roundToNearest250(num) {
+            return Math.round(num / 250) * 250;
+        }
+
+        function performRounding() {
+            const number = parseFloat(document.getElementById("numberInput").value);
+            if (!isNaN(number)) {
+                const rounded = roundToNearest250(number);
+                document.getElementById("result").textContent = "Rounded to: " + rounded;
+            } else {
+                document.getElementById("result").textContent = "Please enter a valid number.";
+            }
+        }
+    </script>
+</body>
+</html>
